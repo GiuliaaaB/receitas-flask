@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/css/cadastro.css">
+  <link rel="shortcut icon" href="/static/imagens/lista.png" type="image/x-icon" />
+  <title>Cadastro de Receita</title>
+</head>
+<body>
+  {% if current_user.is_admin %}
+    <form action="{{ url_for('logout') }}" method="GET"  id="logout-form" style="position: fixed; top: 2px; right: 20px; z-index: 1000;">
+    <button type="submit" id="logout-button" style="
+      padding: 12px 24px;
+      background-color: #ff4d6d;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease;
+    ">Sair</button>
+  </form>
+{% endif %}
+
+  <div class="grid">
+    <div class="label-receita">
+      <h1>Cadastre aqui sua receita!</h1>
+    </div>
+
+    <a href="{{ url_for('lista') }}">
+      <button type="button" id="receitas">Ver Receitas Cadastradas</button>
+    </a>
+
+    <div class="forms">
+      <form action="{{ url_for('cadastro') }}" method="POST">
+        <div class="form-group">
+          <h3>Nome do Prato:</h3>
+          <input type="text" name="nome" required>
+        </div>
+
+        <div class="form-group">
+          <h3>Tipo:</h3>
+          <input type="text" name="tipo" placeholder="salgada/doce" required>
+        </div>
+
+        <div class="form-group">
+          <h3>Origem:</h3>
+          <input type="text" name="origem" placeholder="país/região" required>
+        </div>
+
+        <div class="form-group">
+          <h3>Ingredientes:</h3>
+          <input type="text" name="ingredientes" required>
+        </div>
+
+        <div class="form-group">
+          <h3>Modo de preparo:</h3>
+          <input type="text" name="modo" required>
+        </div>
+
+        <div class="form-group">
+          <button id="cadastrar" type="submit">Cadastrar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

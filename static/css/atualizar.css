@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Roboto:wght@100;300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle,  #fed4d4 0%, #ff9191 100%);
+    backdrop-filter: blur(8px);
+    padding: 20px;
+}
+
+body {
+    overflow-y: auto;
+}
+
+.grid {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 700px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+#receitas{
+    width: 40%;
+    margin-left: 30%;
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+    background-color: #ff4e5d;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#receitas:hover{
+    background-color: #ff3244;
+}
+
+.label-receita {
+    background-color:  #ff4e5d;
+    width: 100%;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.label-receita h1 {
+    font-size: 1.7rem;
+    font-weight: 500;
+}
+
+.forms{
+    width: 100%;
+    padding: 20px;
+    margin-top: 20px;
+    background: #fff;
+    color: #000;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+#tipo{
+    margin-bottom: 20px;
+} 
+
+#ingredientes{
+    width: 100%;
+    height: 90px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+#modo{
+    width: 100%;
+    height: 120px;
+    padding: 10px;
+    font-size: 1rem;
+} 
+
+h3{
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    color: white;
+    background-color: #ff0015;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.form-group button:hover {
+    background-color: #ff293b;
+}
+
+#atualizar {
+    width: 80%;
+    padding: 10px;
+    margin-left: 10%;
+    font-size: 20px;
+    color: white;
+    background-color: #ff2235;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        max-width: 700px; 
+    }
+
+    .label-receita h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .grid {
+        margin: 10px;
+        border-radius: 8px;
+    }
+
+    .label-receita h1 {
+        font-size: 1.4rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    #receitas {
+        font-size: 18px;
+        padding: 8px;
+    }
+
+    .forms {
+        padding: 15px;
+    }
+}
+@media (min-width: 1024px) {
+    .grid {
+        max-width: 800px;
+    }
+
+    .forms {
+        padding: 30px;
+    }
+
+    .form-group input,
+    #ingredientes,
+    #modo {
+        font-size: 1.1rem;
+        padding: 12px;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    .label-receita h1 {
+        font-size: 2rem;
+    }
+}

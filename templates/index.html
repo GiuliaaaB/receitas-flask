@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/static/css/home.css">
+    <link rel="shortcut icon" href="/static/imagens/lista.png" type="image/x-icon" />
+    <script>
+    function mostrarLoginAdmin() {
+        document.getElementById('admin-login').style.display = 'block';
+    }
+    </script>
+</head>
+<body>
+    <div class="grid">
+        <div class="icon">
+            <img src="/static/imagens/icon.svg" alt="Login">
+            <h1>Pronto(a) para começar?</h1>
+        </div>
+
+        <div class="button">
+            <!-- Entrar como visitante -->
+            <form action="{{ url_for('login') }}" method="POST">
+                <input type="hidden" name="user_type" value="visitor">
+                <button type="submit" class="btn-link">Entrar como Visitante</button>
+            </form>            
+
+            <br>
+
+            <!-- Botão para exibir login de admin -->
+            <button onclick="mostrarLoginAdmin()" class="btn-link" style="margin-top: 10px;">Entrar como Admin</button>
+
+            <!-- Formulário admin escondido inicialmente -->
+            <form id="admin-login" action="{{ url_for('login') }}" method="POST" style="display: none; margin-top: 20px;">
+                <input type="hidden" name="user_type" value="admin">
+                <input type="text" name="username" placeholder="Usuário" required style="margin-bottom: 10px; padding: 10px; width: 80%;">
+                <input type="password" name="password" placeholder="Senha" required style="margin-bottom: 10px; padding: 10px; width: 80%;">
+                <button type="submit" class="btn-link">Login Admin</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
